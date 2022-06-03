@@ -2,9 +2,17 @@
   "name": "@editframe/airbnb-made-possible-by-hosts-example",
   "author": "Nick Camillo <nick@editframe.com>",
   "scripts": {
+    "format": "xo --fix",
     "make-dot-env": "cp -n .env.example .env"
   },
   "dependencies": {
     "@editframe/editframe-js": "^2.3.0"
-  }
+  },
+  "devDependencies": {
+    "xo": "^0.49.0"
+  },
+  "engines": {
+    "node": "^16"
+  },
+  "type": "module"
 }
