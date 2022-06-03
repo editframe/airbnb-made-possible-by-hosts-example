@@ -1,0 +1,10 @@
+{
+  "name": "@editframe/airbnb-made-possible-by-hosts-example",
+  "author": "Nick Camillo <nick@editframe.com>",
+  "scripts": {
+    "make-dot-env": "cp -n .env.example .env"
+  },
+  "dependencies": {
+    "@editframe/editframe-js": "^2.3.0"
+  }
+}
