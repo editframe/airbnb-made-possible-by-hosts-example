@@ -6,7 +6,8 @@
     "make-dot-env": "cp -n .env.example .env"
   },
   "dependencies": {
-    "@editframe/editframe-js": "^2.3.0"
+    "@editframe/editframe-js": "^2.3.0",
+    "dotenv": "^16.0.1"
   },
   "devDependencies": {
     "xo": "^0.49.0"

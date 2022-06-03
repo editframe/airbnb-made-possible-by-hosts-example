@@ -1,5 +1,6 @@
 import process from 'node:process';
 import {Editframe} from '@editframe/editframe-js';
+import 'dotenv/config.js'; // eslint-disable-line import/no-unassigned-import
 
 const buildVideo = async ({
 	audio,
@@ -8,6 +9,7 @@ const buildVideo = async ({
 }) => {
 	const editframe = new Editframe({
 		clientId: process.env.EDITFRAME_CLIENT_ID,
+		host: process.env.EDITFRAME_HOST ?? 'https://api.editframe.com',
 		token: process.env.EDITFRAME_API_TOKEN,
 	});
 
