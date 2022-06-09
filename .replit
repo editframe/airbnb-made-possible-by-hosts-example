@@ -1,0 +1,3 @@
+language = "nodejs"
+run = "node index.js"
+hidden = [".env.example", ".gitignore", "xo.config.cjs"]
