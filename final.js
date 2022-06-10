@@ -9,6 +9,7 @@ const buildVideo = async ({
 }) => {
 	const editframe = new Editframe({
 		clientId: process.env.EDITFRAME_CLIENT_ID,
+		develop: true,
 		host: process.env.EDITFRAME_HOST ?? 'https://api.editframe.com',
 		token: process.env.EDITFRAME_API_TOKEN,
 	});
@@ -176,29 +177,30 @@ const buildVideo = async ({
 		},
 	);
 
-	const result = await composition.encode();
+	const result = await composition.encode({
+		synchronously: true,
+	});
 
-	console.log(JSON.stringify(result));
+	console.log(JSON.stringify(result, null, 2));
 };
 
-const audio =
-	'https://efapisplat.nyc3.digitaloceanspaces.com/guides/airbnb-made-possible-by-hosts/arlae.mp3';
+const audio = 'https://docs.editframe.com/guides/airbnb-commercial/arlae.mp3';
 const introImage =
-	'https://efapisplat.nyc3.digitaloceanspaces.com/guides/airbnb-made-possible-by-hosts/together.jpg';
+	'https://docs.editframe.com/guides/airbnb-commercial/together.jpg';
 const part1Images = [
-	'https://efapisplat.nyc3.digitaloceanspaces.com/guides/airbnb-made-possible-by-hosts/ocean-drive.jpg',
-	'https://efapisplat.nyc3.digitaloceanspaces.com/guides/airbnb-made-possible-by-hosts/juice.jpg',
+	'https://docs.editframe.com/guides/airbnb-commercial/ocean-drive.jpg',
+	'https://docs.editframe.com/guides/airbnb-commercial/juice.jpg',
 ];
 const part2Images = [
-	'https://efapisplat.nyc3.digitaloceanspaces.com/guides/airbnb-made-possible-by-hosts/crab.jpg',
-	'https://efapisplat.nyc3.digitaloceanspaces.com/guides/airbnb-made-possible-by-hosts/street-art.jpg',
-	'https://efapisplat.nyc3.digitaloceanspaces.com/guides/airbnb-made-possible-by-hosts/tree.jpg',
-	'https://efapisplat.nyc3.digitaloceanspaces.com/guides/airbnb-made-possible-by-hosts/sushi.jpg',
+	'https://docs.editframe.com/guides/airbnb-commercial/crab.jpg',
+	'https://docs.editframe.com/guides/airbnb-commercial/street-art.jpg',
+	'https://docs.editframe.com/guides/airbnb-commercial/tree.jpg',
+	'https://docs.editframe.com/guides/airbnb-commercial/sushi.jpg',
 ];
 const spacerImage =
-	'https://efapisplat.nyc3.digitaloceanspaces.com/guides/airbnb-made-possible-by-hosts/spacer.jpg';
+	'https://docs.editframe.com/guides/airbnb-commercial/spacer.jpg';
 const logoImage =
-	'https://efapisplat.nyc3.digitaloceanspaces.com/guides/airbnb-made-possible-by-hosts/editframe-logo.png';
+	'https://docs.editframe.com/guides/airbnb-commercial/editframe-logo.png';
 const locationText = 'Miami Beach';
 const hostText = 'Jean Carlos';
 const catchphraseText = 'Something to write home about';
